@@ -1,4 +1,5 @@
 import random
+import os
 from datetime import datetime
 
 quotes = [
@@ -29,6 +30,9 @@ See data/log.md
 
 with open("README.md", "w") as f:
     f.write(readme_content)
+
+# memastikan folder ada
+os.makedirs("data", exist_ok=True)
 
 with open("data/log.md", "a") as f:
     f.write(f"\n{now} - Updated README automatically.")
