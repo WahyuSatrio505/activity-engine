@@ -3,36 +3,58 @@ import os
 from datetime import datetime
 
 quotes = [
-"Code is like humor. When you have to explain it, it’s bad.",
-"Programs must be written for people to read.",
-"Simplicity is the soul of efficiency.",
-"First, solve the problem. Then, write the code.",
-"Experience is the name everyone gives to their mistakes."
+"Kode yang baik bukan hanya berjalan, tapi mudah dipahami. -- wahyu ",
+"Debugging adalah seni menemukan kesalahan yang kita buat sendiri.",
+"Fokus + Konsisten = Keahlian ,Tercapainya Tujuan",
+"Konsisten diatas segalanya..."
 ]
 
-quote = random.choice(quotes)
+tips_ai = [
+"Pelajari Python jika ingin masuk dunia AI.",
+"Pahami konsep data structure sebelum machine learning.",
+"Model AI bagus berasal dari data yang bagus.",
+"Biasakan membaca dokumentasi."
+]
+
+catatan = [
+"Hari ini belajar tentang GitHub Actions  (GIT). ",
+"Mencoba memahami automation workflow.",
+"Belajar sedikit tentang scripting Python.",
+"Menjelajahi cara kerja CI/CD."
+]
+
 now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-readme_content = f"""
-# Wahyu's GitHub Activity Engine 🚀
+quote = random.choice(quotes)
+tip = random.choice(tips_ai)
+note = random.choice(catatan)
 
-Automation project that updates this README every day.
+readme = f"""
+# Activity Engine Wahyu 🚀
 
-## Last Update
+Repository ini melakukan update otomatis setiap hari menggunakan GitHub Actions.
+
+## Update Terakhir
 {now}
 
-## Random Dev Quote
-"{quote}"
+## Quote Programming Hari Ini
+{quote}
 
-## Daily Log
-See data/log.md
+## Tips AI
+{tip}
+
+## Catatan Belajar
+{note}
+
+---
+
+Repository ini diperbarui otomatis oleh sistem automation.
 """
 
-with open("README.md", "w") as f:
-    f.write(readme_content)
+with open("README.md","w") as f:
+    f.write(readme)
 
-# memastikan folder ada
 os.makedirs("data", exist_ok=True)
 
-with open("data/log.md", "a") as f:
-    f.write(f"\n{now} - Updated README automatically.")
+with open("data/log.md","a") as f:
+    f.write(f"\n{now} - Update otomatis berhasil.")
