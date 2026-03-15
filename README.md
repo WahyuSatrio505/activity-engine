@@ -1,3 +1,9 @@
+## 📊 Statistik GitHub Saya
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=WahyuSatrio505&show_icons=true&theme=tokyonight)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=WahyuSatrio505&layout=compact&theme=tokyonight)
+
 
 # Activity Engine Wahyu 🚀
 
