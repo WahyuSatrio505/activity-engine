@@ -2,72 +2,61 @@ import random
 import os
 from datetime import datetime
 
-quotes = [
-"Kode yang baik bukan hanya berjalan, tapi mudah dipahami. -- wahyu ",
-"Debugging adalah seni menemukan kesalahan yang kita buat sendiri.",
-"Fokus + Konsisten = Keahlian ,Tercapainya Tujuan",
-"Konsisten diatas segalanya..."
-]
-
-tips_ai = [
-"Pelajari Python jika ingin masuk dunia AI.",
-"Pahami konsep data structure sebelum machine learning.",
-"Model AI bagus berasal dari data yang bagus.",
-"Biasakan membaca dokumentasi."
-]
-
-catatan = [
-"Hari ini belajar tentang GitHub Actions (GIT).",
-"Mencoba memahami automation workflow.",
-"Belajar sedikit tentang scripting Python.",
-"Menjelajahi cara kerja CI/CD."
-]
-
 now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
+quotes = [
+    "Consisten Diatas segalanyaa...",
+    "Sedikit push,.",
+    "Debugging adalah berpikir, bukan menebak..",
+    "Pengalaman di atas segalanyaa"
+]
+
+status_list = ["building", "testing", "improving", "refactoring"]
+
 quote = random.choice(quotes)
-tip = random.choice(tips_ai)
-note = random.choice(catatan)
+status = random.choice(status_list)
+unique_id = random.randint(1000, 999999)
 
-# 🔥 INI KUNCI UTAMA
-unique_id = random.randint(100000, 999999)
 
-readme = f"""
-# Activity Engine Wahyu 🚀
+readme_content = f"""
+# 🚀 Wahyu Dev Activity
 
-Repository ini melakukan update otomatis setiap hari menggunakan GitHub Actions.
-
-## Update Terakhir
+## Last Update
 {now}
 
-## ID Unik
-{unique_id}
+## Status
+{status}
 
-## Quote Programming Hari Ini
+## Dev Quote
 {quote}
 
-## Tips AI
-{tip}
-
-## Catatan Belajar
-{note}
-
----
-
-Repository ini diperbarui otomatis oleh sistem automation.
+## Update ID
+{unique_id}
 """
 
-with open("README.md","w") as f:
-    f.write(readme)
+with open("README.md", "w") as f:
+    f.write(readme_content)
+
 
 os.makedirs("data", exist_ok=True)
 
-with open("data/log.md","a") as f:
-    f.write(f"\n{now} - Update otomatis berhasil. ID: {unique_id}")
-
-
-status = random.choice(["success", "running", "improving"])
-unique_id = random.randint(1000, 999999)
-
-with open("data/log.md","a") as f:
+with open("data/log.md", "a") as f:
     f.write(f"\n{now} - Status: {status} - ID: {unique_id}")
+
+
+chance = random.randint(1, 3)
+
+if chance == 1:
+    filename = f"data/dev_note_{unique_id}.md"
+    
+    content = f"""
+## Dev Note
+
+Time: {now}
+Status: {status}
+
+Thought:
+Today I explored automation and system behavior.
+"""
+    with open(filename, "w") as f:
+        f.write(content)
