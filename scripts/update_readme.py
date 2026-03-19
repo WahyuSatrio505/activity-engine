@@ -17,17 +17,20 @@ tips_ai = [
 ]
 
 catatan = [
-"Hari ini belajar tentang GitHub Actions  (GIT). ",
+"Hari ini belajar tentang GitHub Actions (GIT).",
 "Mencoba memahami automation workflow.",
 "Belajar sedikit tentang scripting Python.",
 "Menjelajahi cara kerja CI/CD."
 ]
 
-now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
 quote = random.choice(quotes)
 tip = random.choice(tips_ai)
 note = random.choice(catatan)
+
+# 🔥 INI KUNCI UTAMA
+unique_id = random.randint(100000, 999999)
 
 readme = f"""
 # Activity Engine Wahyu 🚀
@@ -36,6 +39,9 @@ Repository ini melakukan update otomatis setiap hari menggunakan GitHub Actions.
 
 ## Update Terakhir
 {now}
+
+## ID Unik
+{unique_id}
 
 ## Quote Programming Hari Ini
 {quote}
@@ -57,4 +63,4 @@ with open("README.md","w") as f:
 os.makedirs("data", exist_ok=True)
 
 with open("data/log.md","a") as f:
-    f.write(f"\n{now} - Update otomatis berhasil.")
+    f.write(f"\n{now} - Update otomatis berhasil. ID: {unique_id}")
