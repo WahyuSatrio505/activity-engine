@@ -64,3 +64,10 @@ os.makedirs("data", exist_ok=True)
 
 with open("data/log.md","a") as f:
     f.write(f"\n{now} - Update otomatis berhasil. ID: {unique_id}")
+
+
+status = random.choice(["success", "running", "improving"])
+unique_id = random.randint(1000, 999999)
+
+with open("data/log.md","a") as f:
+    f.write(f"\n{now} - Status: {status} - ID: {unique_id}")
